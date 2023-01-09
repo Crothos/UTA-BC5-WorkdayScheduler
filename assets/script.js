@@ -1,14 +1,25 @@
 var timeDisplayEl = $('#currentDay');
 var saveButton = $('.btn');
 var currentHour = dayjs().format('H');
+var textBox = $(".description");
+
+// JUST IN CASE I CAN'T FIGURE IT OUT
+// var textBox9 = $("#description9");
+// var textBox10 = $("#description10");
+// var textBox11 = $("#description11");
+// var textBox12 = $("#description12");
+// var textBox13 = $("#description13");
+// var textBox14 = $("#description14");
+// var textBox15 = $("#description15");
+// var textBox16 = $("#description16");
+// var textBox17 = $("#description17");
+
 function displayTime() {
     var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
     timeDisplayEl.text(rightNow);
 }
 
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+
 $(function () {
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
@@ -19,15 +30,13 @@ $(function () {
     $(saveButton).on("click", saveElement);
     function saveElement(){
         var parentID = $(this).parent().attr('id');
-        var userInput = $(".description").val();
-        console.log(userInput);
+        var userInput = textBox.val();
+         // // // // I need something like this: 
+        // // // var userInput = $(this).parent().child().val();
         localStorage.setItem(parentID, userInput);
     }
-    // TODO: Add code to apply the past, present, or future class to each time
-    // block by comparing the id to the current hour. HINTS: How can the id
-    // attribute of each time-block be used to conditionally add or remove the
-    // past, present, and future classes? How can Day.js be used to get the
-    // current hour in 24-hour time?
+
+// Checks for hour value, assigns class to div ID based on value.
 
     if (currentHour == 9) {
         $("#hour-9").addClass("present");
@@ -100,10 +109,74 @@ $(function () {
     } else {
         $("#hour-17").addClass("future");
     }
+
+
     // TODO: Add code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. HINT: How can the id
     // attribute of each time-block be used to do this?
+    displayDescription();
+    // displayDescription9();
+    // displayDescription10();
+    // displayDescription11();
+    // displayDescription12();
+    // displayDescription13();
+    // displayDescription14();
+    // displayDescription15();
+    // displayDescription16();
+    // displayDescription17();
+    
+    function displayDescription() {
+        var userDesc = localStorage.getItem("hour-9");
+        console.log(userDesc);
+        textBox.append(userDesc);
+    }
+    // function displayDescription9() {
+    //     var userDesc = localStorage.getItem("hour-9");
+    //     console.log(userDesc);
+    //     textBox9.append(userDesc);
+    // }
 
+    // function displayDescription10() {
+    //     var userDesc = localStorage.getItem("hour-10");
+    //     console.log(userDesc);
+    //     textBox10.append(userDesc);
+    // }
+
+    // function displayDescription11() {
+    //     var userDesc = localStorage.getItem("hour-11");
+    //     console.log(userDesc);
+    //     textBox11.append(userDesc);
+    // }
+    // function displayDescription12() {
+    //     var userDesc = localStorage.getItem("hour-12");
+    //     console.log(userDesc);
+    //     textBox12.append(userDesc);
+    // }
+    // function displayDescription13() {
+    //     var userDesc = localStorage.getItem("hour-13");
+    //     console.log(userDesc);
+    //     textBox13.append(userDesc);
+    // }
+    // function displayDescription14() {
+    //     var userDesc = localStorage.getItem("hour-14");
+    //     console.log(userDesc);
+    //     textBox14.append(userDesc);
+    // }
+    // function displayDescription15() {
+    //     var userDesc = localStorage.getItem("hour-15");
+    //     console.log(userDesc);
+    //     textBox15.append(userDesc);
+    // }
+    // function displayDescription16() {
+    //     var userDesc = localStorage.getItem("hour-16");
+    //     console.log(userDesc);
+    //     textBox16.append(userDesc);
+    // }
+    // function displayDescription17() {
+    //     var userDesc = localStorage.getItem("hour-17");
+    //     console.log(userDesc);
+    //     textBox17.append(userDesc);
+    // }
   });
   
   displayTime();
