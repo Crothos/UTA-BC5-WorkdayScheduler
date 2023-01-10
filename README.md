@@ -1,3 +1,28 @@
-# UTA Bootcamp Challenge NUMBER
+# Workday Scheduler
 
-In this homework assignment from the University of Texas-Austin Bootcamp we were asked to ...
+## Description:
+This app is designed to save the wordday's tasks divided into hours. The times will change color depending on the time of day and will store locally the description of the task.
+
+
+
+## Table of Contents
+
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Mock-up](#mock-up)
+
+## Usage
+- Github Repo (https://github.com/Crothos/UTA-BC5-WorkdayScheduler)
+- Deployed URL (https://crothos.github.io/UTA-BC5-WorkdayScheduler/)
+
+## Credits
+- Starter Code/Repo by Josh Goeke (joshuagoeke).
+## License
+
+MIT License
+
+
+
+## Preview ##
+[Preview Image](Scheduler.jpg)
