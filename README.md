@@ -10,7 +10,7 @@ This app is designed to save the wordday's tasks divided into hours. The times w
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-- [Mock-up](#mock-up)
+- [Preview](#preview)
 
 ## Usage
 - Github Repo (https://github.com/Crothos/UTA-BC5-WorkdayScheduler)
